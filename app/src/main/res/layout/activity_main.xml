@@ -5,15 +5,41 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/primarygradient"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/logoText"
+            android:layout_width="0dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:text="Password Generator"
+            android:textColor="#2F5D88"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/profileImage"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_gravity="end"
+            android:background="@drawable/profileicon"
+            android:contentDescription="profileIcon"
+            android:scaleType="centerCrop"
+            android:src="@drawable/profileicon" />
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
