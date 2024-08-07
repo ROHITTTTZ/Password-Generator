@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Password Generator</string>
+    <string name="view_all">View All</string>
+    <string name="logins">Logins</string>
+    <string name="cards">Cards</string>
+    <string name="identity">Identity</string>
+    <string name="notes">Notes</string>
+    <string name="logins_count">02</string>
+    <string name="cards_count">10</string>
+    <string name="identity_count">22</string>
+    <string name="notes_count">40</string>
+    <string name="logo_text">Password Generator</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
