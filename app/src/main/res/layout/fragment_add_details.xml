@@ -1,18 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@drawable/primarygradient"
-    tools:context=".AddDetails">
+    android:padding="16dp">
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:id="@+id/textViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Add Details"
-        android:gravity="center
-"       android:textSize="30sp"
+        android:textSize="24sp"
+        android:textStyle="bold"
         android:textColor="@color/black"
-        />
+        android:fontFamily="@font/poppins_medium"
+        android:paddingBottom="8dp"/>
 
-</FrameLayout>
+    <View
+        android:id="@+id/divider"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="15dp"
+        android:background="#000509" />
+
+    <TextView
+        android:id="@+id/textViewName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:textSize="18sp"
+        android:fontFamily="@font/poppins_medium"
+        android:paddingTop="16dp"/>
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Example: Instagram, Google"
+        android:padding="12dp"
+        android:background="@drawable/outputscreen"/>
+
+    <TextView
+        android:id="@+id/textViewUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Username"
+        android:textSize="18sp"
+        android:fontFamily="@font/poppins_medium"
+        android:paddingTop="16dp"/>
+
+    <EditText
+        android:id="@+id/editTextUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:background="@drawable/outputscreen"
+        android:drawableStart="@drawable/usericon"
+        android:drawablePadding="8dp"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/textViewPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        android:textSize="18sp"
+        android:fontFamily="@font/poppins_medium"
+        android:paddingTop="16dp"/>
+
+<EditText
+    android:id="@+id/editTextPassword"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="12dp"
+    android:background="@drawable/outputscreen"
+    android:drawableStart="@drawable/lock"
+    android:drawableEnd="@drawable/visibility_off"
+    android:drawablePadding="8dp"
+    android:inputType="textPassword"
+    android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/textViewNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add a note"
+        android:textSize="18sp"
+        android:fontFamily="@font/poppins_medium"
+        android:paddingTop="16dp"/>
+
+    <EditText
+        android:id="@+id/editTextNote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:background="@drawable/outputscreen"
+        android:drawableStart="@drawable/notesicon"
+        android:drawablePadding="8dp"
+        android:layout_marginTop="8dp"/>
+
+    <Button
+    android:id="@+id/buttonSaveDetails"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Save Details"
+    android:textSize="20sp"
+    android:background="@drawable/button"
+    android:textColor="@android:color/white"
+    android:layout_marginTop="35dp"/>
+</LinearLayout>
