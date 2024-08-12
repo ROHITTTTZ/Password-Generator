@@ -1,19 +1,18 @@
 package com.example.passwordgenerator;
 
 import android.content.Context;
-import android.content.SharedPreferences;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import androidx.appcompat.app.AppCompatDelegate;
-import androidx.appcompat.widget.SwitchCompat;
+import android.widget.LinearLayout;
+
 import androidx.fragment.app.Fragment;
 
 public class Setting extends Fragment {
 
     private static final String PREFS_NAME = "settings_prefs";
-    private static final String DARK_MODE_KEY = "dark_mode";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -22,27 +21,18 @@ public class Setting extends Fragment {
         View view = inflater.inflate(R.layout.fragment_setting, container, false);
 
         // Initialize views
-        SwitchCompat switchDarkMode = view.findViewById(R.id.switch_dark_mode);
+        LinearLayout privacyPolicySection = view.findViewById(R.id.privacyPolicySection);
+        LinearLayout aboutUsSection = view.findViewById(R.id.aboutUsSection);
 
-        // Load saved dark mode state
-        SharedPreferences sharedPreferences = requireActivity().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
-        boolean isDarkMode = sharedPreferences.getBoolean(DARK_MODE_KEY, false);
-        switchDarkMode.setChecked(isDarkMode);
+        // Set click listeners
+        privacyPolicySection.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), PrivacyPolicyActivity.class);
+            startActivity(intent);
+        });
 
-        // Set up listeners
-        switchDarkMode.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            // Handle dark mode switch
-            int currentNightMode = AppCompatDelegate.getDefaultNightMode();
-            int newNightMode = isChecked ? AppCompatDelegate.MODE_NIGHT_YES : AppCompatDelegate.MODE_NIGHT_NO;
-
-            if (currentNightMode != newNightMode) {
-                AppCompatDelegate.setDefaultNightMode(newNightMode);
-
-                // Save dark mode state
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putBoolean(DARK_MODE_KEY, isChecked);
-                editor.apply();
-            }
+        aboutUsSection.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), AboutUsActivity.class);
+            startActivity(intent);
         });
 
         return view;

@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginStart="12dp"
-        android:text="Lets secure your passwords.."
+        android:text="Let's secure your passwords.."
         android:textColor="@color/black"
         android:textSize="20sp"
         android:fontFamily="@font/poppins_medium"
@@ -59,11 +59,13 @@
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/hometext1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginTop="16dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/hometext1"
+        app:layout_constraintVertical_bias="1.0">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewPasswords"
@@ -71,4 +73,48 @@
             android:layout_height="wrap_content"
             android:padding="8dp" />
     </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/emptyStateLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@id/hometext1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/imageViewEmptyState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/emptystate"
+            android:contentDescription="No passwords stored"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/textViewEmptyStateTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No Password Stored"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:fontFamily="@font/poppins_medium"
+            android:layout_marginTop="16dp"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/textViewEmptyStateSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add a new password to get started..."
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppins_medium"
+            android:layout_marginTop="8dp"
+            android:gravity="center" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
